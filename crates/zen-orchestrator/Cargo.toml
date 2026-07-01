@@ -1,0 +1,19 @@
+[package]
+name = "zen-orchestrator"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+serde = { workspace = true, features = ["derive"] }
+tokio = { workspace = true, features = ["rt", "rt-multi-thread", "sync", "time", "macros"] }
+zen-core = { path = "../zen-core" }
+zen-hardware = { path = "../zen-hardware" }
+zen-modelhub = { path = "../zen-modelhub" }
+zen-telemetry = { path = "../zen-telemetry" }

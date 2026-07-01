@@ -1,0 +1,4 @@
+[serve]
+[serve.vector]
+enabled = true
+storage_type = "lance"

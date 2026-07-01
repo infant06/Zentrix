@@ -1,0 +1,25 @@
+ZenLLM / Zentrix
+Copyright (c) 2026 ZenLLM Contributors
+
+This product includes software developed by third parties:
+
+- mistral.rs — MIT License — https://github.com/EricLBuehler/mistral.rs
+  ZenLLM's runtime and pipeline design are derived from mistral.rs.
+
+- candle — MIT/Apache-2.0 — https://github.com/huggingface/candle
+  Tensor library and CUDA/Metal backends.
+
+- llama.cpp — MIT License — https://github.com/ggerganov/llama.cpp
+  GGUF quantized MMQ/MMVQ CUDA kernels are adapted from llama.cpp.
+
+- vLLM — Apache-2.0 — https://github.com/vllm-project/vllm
+  PagedAttention concepts and some CUDA compatibility headers.
+
+- AirLLM — Apache-2.0 — https://github.com/lyogavin/airllm
+  Inspiration for the FlexLoad layer-streaming execution mode.
+
+- Lance — Apache-2.0 — https://github.com/lancedb/lance
+  Columnar storage backend for the memory engine.
+
+Model weights are not included in this repository and are subject to their
+own licenses (e.g., the Qwen2.5 models by Alibaba Cloud).

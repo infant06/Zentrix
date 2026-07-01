@@ -1,0 +1,36 @@
+[package]
+name = "zen-bench-runtime"
+publish = false
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+candle-core.workspace = true
+either.workspace = true
+indexmap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+zen-core.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+tokio.workspace = true
+cli-table.workspace = true
+
+[features]
+cuda = ["zen-core/cuda"]
+cudnn = ["zen-core/cudnn"]
+metal = ["zen-core/metal"]
+flash-attn = ["cuda", "zen-core/flash-attn"]
+accelerate = ["zen-core/accelerate"]
+mkl = ["zen-core/mkl"]
+nccl = ["zen-core/nccl"]
+ring = ["zen-core/ring"]

@@ -1,0 +1,39 @@
+[package]
+name = "zen-vector"
+version = "0.1.0"
+edition = "2021"
+description = "Fast vector quantization and SIMD search backend for zenllm"
+
+[dependencies]
+ndarray = "0.15"
+rayon = "1.10"
+ordered-float = "4"
+rand = "0.8"
+rand_chacha = "0.3"
+rand_distr = "0.4"
+statrs = "0.17"
+faer = "0.19"
+lance = { version = "*", optional = true }
+
+anyhow = "1.0"
+async-trait = "0.1"
+serde_json = "1.0"
+zen-core = { path = "../zen-core" }
+arrow = "57"
+arrow-array = "57"
+arrow-schema = "57"
+futures.workspace = true
+lance-index = { version = "4.0.1", optional = true }
+lance-linalg = { version = "4.0.1", optional = true }
+
+[features]
+default = ["memory-storage", "lance-storage"]
+memory-storage = []
+lance-storage = ["dep:lance", "dep:lance-index", "dep:lance-linalg"]
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "search_bench"
+harness = false

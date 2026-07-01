@@ -1,0 +1,16 @@
+[package]
+name = "zen-kernels-onnx"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+ndarray = "0.17.2"
+ort = "2.0.0-rc.12"

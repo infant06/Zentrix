@@ -1,0 +1,37 @@
+/target
+.ruff_cache
+.vscode
+*.a
+.DS_Store
+.idea
+mistral.rs/
+
+mistralrs-cli/webui/node_modules/
+
+# mdbook output
+docs/book/
+
+# Starlight / Astro
+docs/node_modules/
+docs/dist/
+docs/.astro/
+out/
+
+# Model weights (too large for git; distribute via HF/releases)
+*.gguf
+*.ggml
+*.safetensors
+*.uqff
+*.bin
+!models/.gitkeep
+
+# Local build/verification artifacts
+*.log
+*.pdb
+__pycache__/
+
+# Benchmark outputs and downloaded tool archives
+/flexload_result.json
+/normal_result.json
+*_result.json
+/protoc.zip

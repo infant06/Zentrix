@@ -1,0 +1,59 @@
+[package]
+name = "zen-python"
+publish = false
+authors = ["Eric Buehler", "ZenLLM Team"]
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+homepage.workspace = true
+
+[lib]
+name = "zentrix"
+crate-type = ["cdylib"]
+doc = false
+
+[dependencies]
+pyo3.workspace = true
+zen-core = { workspace = true, features = ["pyo3_macros"] }
+zen-protocol = { workspace = true, features = ["pyo3_macros"] }
+serde.workspace = true
+serde_json.workspace = true
+candle-core.workspace = true
+indexmap.workspace = true
+zen-hardware = { workspace = true }
+accelerate-src = { workspace = true, optional = true }
+intel-mkl-src = { workspace = true, optional = true }
+either.workspace = true
+futures.workspace = true
+tokio.workspace = true
+image.workspace = true
+reqwest.workspace = true
+base64.workspace = true
+url.workspace = true
+data-url.workspace = true
+anyhow.workspace = true
+itertools.workspace = true
+
+[build-dependencies]
+pyo3-build-config.workspace = true
+
+[features]
+default = []
+cuda = ["candle-core/cuda", "zen-core/cuda"]
+cudnn = ["candle-core/cudnn", "zen-core/cudnn"]
+metal = ["candle-core/metal", "zen-core/metal"]
+flash-attn = ["cuda", "zen-core/flash-attn"]
+accelerate = ["zen-core/accelerate"]
+mkl = ["zen-core/mkl"]
+nccl = ["zen-core/nccl"]
+ring = ["zen-core/ring"]
+code-execution = ["zen-core/code-execution"]
+
+[package.metadata.maturin]
+include = ["zentrix.pyi", "py.typed"]
+sdist-include = ["zentrix.pyi", "py.typed"]

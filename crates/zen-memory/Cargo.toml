@@ -1,0 +1,25 @@
+[package]
+name = "zen-memory"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+safetensors.workspace = true
+memmap2.workspace = true
+candle-core = { workspace = true, optional = true }
+zen-telemetry = { path = "../zen-telemetry" }
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[features]
+default = []
+candle = ["dep:candle-core"]
+cuda = ["candle"]

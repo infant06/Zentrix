@@ -1,0 +1,77 @@
+[package]
+name = "zenllm"
+readme = "../README.md"
+authors = ["Eric Buehler", "ZenLLM Team"]
+version.workspace = true
+edition.workspace = true
+description = "ZenLLM - Command-line interface for Zentrix LLM runtime"
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+rust-version.workspace = true
+default-run = "zenllm"
+
+[[bin]]
+name = "zenllm"
+path = "src/main.rs"
+doc = false
+
+[dependencies]
+zen-core = { workspace = true }
+zen-api = { workspace = true }
+zen-sdk = { workspace = true }
+zen-multimodal = { path = "../zen-multimodal", optional = true }
+zen-telemetry = { path = "../zen-telemetry" }
+zen-isolate = { workspace = true }
+candle-core = { workspace = true }
+zen-vector = { path = "../zen-vector" }
+
+clap = { workspace = true }
+clap_complete = "4.5"
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+ctrlc = { workspace = true }
+rustyline = { workspace = true }
+directories = { workspace = true }
+axum = { workspace = true, features = ["multipart", "ws"] }
+either = { workspace = true }
+indexmap = { workspace = true }
+regex = { workspace = true }
+include_dir = { workspace = true }
+mime_guess = { workspace = true }
+tower-http = { workspace = true, features = ["fs"] }
+uuid = { workspace = true, features = ["v4"] }
+chrono = { workspace = true }
+futures-util = { workspace = true }
+image = { workspace = true }
+comfy-table = "7"
+dirs = { workspace = true }
+walkdir = { workspace = true }
+sysinfo = { workspace = true }
+hf-hub = { workspace = true }
+reqwest.workspace = true
+zen-orchestrator = { version = "0.1.0", path = "../zen-orchestrator" }
+zen-hardware = { version = "0.1.0", path = "../zen-hardware" }
+zen-modelhub = { version = "0.1.0", path = "../zen-modelhub" }
+
+[features]
+default = ["code-execution", "lance-storage"]
+lance-storage = ["zen-vector/lance-storage"]
+cuda = ["zen-core/cuda", "zen-api/cuda"]
+cutile = ["cuda", "zen-core/cutile"]
+nccl = ["zen-core/nccl", "zen-api/nccl"]
+cudnn = ["zen-core/cudnn", "zen-api/cudnn"]
+flash-attn = ["cuda", "zen-core/flash-attn", "zen-api/flash-attn"]
+flash-attn-v3 = ["cuda", "zen-core/flash-attn-v3", "zen-api/flash-attn-v3"]
+accelerate = ["zen-core/accelerate", "zen-api/accelerate"]
+metal = ["zen-core/metal", "zen-api/metal"]
+mkl = ["zen-core/mkl", "zen-api/mkl"]
+ring = ["zen-core/ring", "zen-api/ring"]
+code-execution = ["zen-core/code-execution", "zen-api/code-execution"]

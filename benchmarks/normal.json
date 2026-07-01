@@ -1,0 +1,9 @@
+{
+  "mode": "normal",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "load_time_ms": 238275,
+  "ttft_ms": 0.0,
+  "tokens_per_sec": 0.0,
+  "peak_ram_mb": 0,
+  "peak_vram_mb": 0
+}

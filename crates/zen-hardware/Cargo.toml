@@ -1,0 +1,15 @@
+[package]
+name = "zen-hardware"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+sysinfo = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
