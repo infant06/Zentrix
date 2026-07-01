@@ -325,10 +325,6 @@ fn init_router(
         .route(AGENT_APPROVAL_ROUTE.path, post(resolve_agent_approval))
         .route(RESPONSES_ROUTE.path, post(create_response))
         .route(
-            SYSTEM_DOCTOR_ROUTE.path,
-            post(system_doctor),
-        )
-        .route(
             VECTOR_SEARCH_ROUTE.path,
             post(vector_search),
         )
