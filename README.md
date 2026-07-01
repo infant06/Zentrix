@@ -157,9 +157,9 @@ Windows/Turing bring-up.
 
 ## Contributing
 
-Issues and PRs are welcome. Please run `cargo fmt`, `cargo clippy`, and the test
-suite before submitting. For kernel changes, note the target compute capability
-you built and tested against.
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for build
+prerequisites, the checks CI runs, and PR conventions. For kernel changes, note
+the compute capability you built and tested against.
 
 ## License
 
